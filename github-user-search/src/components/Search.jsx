@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import { advancedUserSearch } from "../services/githubService";
 import { fetchUserData, advancedUserSearch } from "../services/githubService";
 
 function Search() {
