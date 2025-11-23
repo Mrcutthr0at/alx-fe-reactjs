@@ -1,3 +1,4 @@
+import axios from "axios"; 
 import githubApi from "./githubApi";
 
 export const fetchUserData = async (username) => {
