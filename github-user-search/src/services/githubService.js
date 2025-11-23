@@ -1,9 +1,8 @@
-import axios from "axios"; 
-import githubApi from "./githubApi";
+import axios from "axios";
 
 export const fetchUserData = async (username) => {
   try {
-    const response = await githubApi.get(`/users/${username}`);
+    const response = await axios.get(`https://api.github.com/users/${username}`);
     return response.data;
   } catch (error) {
     throw error;
