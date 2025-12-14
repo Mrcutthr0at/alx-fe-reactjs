@@ -1,35 +1,30 @@
-import { Routes, Route, Navigate } from 'react-router-dom'
+import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom'
 
 import Home from './pages/Home'
 import Login from './pages/Login'
-import ProfileDetails from './pages/ProfileDetails'
-import ProfileSettings from './pages/ProfileSettings'
 import BlogPost from './pages/BlogPost'
-
 import Profile from './components/Profile'
-import ProtectedRoute from './routes/ProtectedRoute'
+import ProtectedRoute from './components/ProtectedRoute'
 
 export default function App() {
   return (
-    <Routes>
-      <Route path="/" element={<Home />} />
-      <Route path="/login" element={<Login />} />
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/login" element={<Login />} />
 
-      <Route
-        path="/profile"
-        element={
-          <ProtectedRoute>
-            <Profile />
-          </ProtectedRoute>
-        }
-      >
-        <Route index element={<ProfileDetails />} />
-        <Route path="settings" element={<ProfileSettings />} />
-      </Route>
+        <Route
+          path="/profile/*"
+          element={
+            <ProtectedRoute>
+              <Profile />
+            </ProtectedRoute>
+          }
+        />
 
-      <Route path="/blog/:id" element={<BlogPost />} />
-
-      <Route path="*" element={<Navigate to="/" />} />
-    </Routes>
+        <Route path="/blog/:id" element={<BlogPost />} />
+        <Route path="*" element={<Navigate to="/" />} />
+      </Routes>
+    </BrowserRouter>
   )
 }
