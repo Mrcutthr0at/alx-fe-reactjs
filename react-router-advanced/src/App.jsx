@@ -1,10 +1,12 @@
 import { Routes, Route, Navigate } from 'react-router-dom'
+
 import Home from './pages/Home'
 import Login from './pages/Login'
-import Profile from './pages/Profile'
 import ProfileDetails from './pages/ProfileDetails'
 import ProfileSettings from './pages/ProfileSettings'
 import BlogPost from './pages/BlogPost'
+
+import Profile from './components/Profile'
 import ProtectedRoute from './routes/ProtectedRoute'
 
 export default function App() {
