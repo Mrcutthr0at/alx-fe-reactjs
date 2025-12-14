@@ -1,3 +1,3 @@
-export default function ProfileSettings() {
-  return <p>Profile Settings</p>
+export default function ProfileDetails() {
+  return <p>Profile Details</p>
 }

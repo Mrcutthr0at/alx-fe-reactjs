@@ -3,7 +3,7 @@ import { useNavigate } from 'react-router-dom'
 export default function Login() {
   const navigate = useNavigate()
 
-  const handleLogin = () => {
+  const login = () => {
     localStorage.setItem('auth', 'true')
     navigate('/profile')
   }
@@ -11,7 +11,7 @@ export default function Login() {
   return (
     <div>
       <h1>Login</h1>
-      <button onClick={handleLogin}>Login</button>
+      <button onClick={login}>Login</button>
     </div>
   )
 }
